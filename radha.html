@@ -57,135 +57,60 @@
 
 
   <style>
-    .btmbdr{
-     background-color: #0F172B;
-     height:5vw;
-     text-decoration-color:white;
-
-    }
-  
     body {
-    background: #020520;
-    perspective: 500px;
-    overflow-x: hidden;
-}
+      background: #020520;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-figure {
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+      padding: 10px;
+    }
 
-figure:nth-child(1) .img {
-    transform: scale(0.6) rotate(-12.5deg);
-}
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      cursor: pointer;
+    }
 
-figure:nth-child(2) .img {
-    transform: scale(0.6) rotate(-9.722deg);
-}
+    /* Popup styles */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
 
-figure:nth-child(3) .img {
-    transform: scale(0.6) rotate(-6.944deg);
-}
+    .popup img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
 
-figure:nth-child(4) .img {
-    transform: scale(0.6) rotate(-4.167deg);
-}
-
-figure:nth-child(5) .img {
-    transform: scale(0.6) rotate(-1.389deg);
-}
-
-figure:nth-child(6) .img {
-    transform: scale(0.6) rotate(1.389deg);
-}
-
-figure:nth-child(7) .img {
-    transform: scale(0.6) rotate(4.167deg);
-}
-
-figure:nth-child(8) .img {
-    transform: scale(0.6) rotate(6.944deg);
-}
-
-figure:nth-child(9) .img {
-    transform: scale(0.6) rotate(9.722deg);
-}
-
-figure:nth-child(10) .img {
-    transform: scale(0.6) rotate(12.5deg);
-}
-figure:nth-child(11) .img {
-    transform: scale(0.6) rotate(14.722deg);
-}
-
-figure:nth-child(12) .img {
-    transform: scale(0.6) rotate(18.600deg);
-}
-
-figure:nth-child(13) .img {
-    transform: scale(0.6) rotate(20.944deg);
-}
-
-figure:nth-child(14) .img {
-    transform: scale(0.6) rotate(22.722deg);
-}
-
-figure:nth-child(15) .img {
-    transform: scale(0.6) rotate(25.5deg);
-}
-figure:nth-child(16) .img {
-    transform: scale(0.6) rotate(28.722deg);
-}
-
-figure:nth-child(17) .img {
-    transform: scale(0.6) rotate(32.600deg);
-}
-figure:nth-child(18) .img {
-    transform: scale(0.6) rotate(34.722deg);
-}
-
-figure:nth-child(19) .img {
-    transform: scale(0.6) rotate(36.600deg);
-}
-
-figure:nth-child(20) .img {
-    transform: scale(0.6) rotate(38.944deg);
-}
-
-figure:nth-child(21) .img {
-    transform: scale(0.6) rotate(40.722deg);
-}
-
-figure:nth-child(22) .img {
-    transform: scale(0.6) rotate(42.5deg);
-}
-figure:nth-child(23) .img {
-    transform: scale(0.6) rotate(44.722deg);
-}
-
-figure:nth-child(24) .img {
-    transform: scale(0.6) rotate(20.600deg);
-}
-
-figure:nth-child(25) .img {
-    transform: scale(0.6) rotate(22.600deg);
-}
-
-figure:nth-child(26) .img {
-    transform: scale(0.6) rotate(24.600deg);
-}
-.img {
-    width: 100vmin;
-    height: 100vmin;
-    border-radius: 3px;
-}
-
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
   </style>
+
 </head>
 
 <body>
@@ -233,113 +158,102 @@ figure:nth-child(26) .img {
 
     <!-- imagessssss-->
     <div class="gallery">
-      <figure>
-          <img class="img" src="rr6.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-          <img class="img" src="rr7.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-          <img  class="img" src="rr8.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-          <img class="img" src="rr10.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-        <img class="img" src="rr11.jpg" width="1000" height="1000">
-    </figure>
-    <figure>
-      <img class="img" src="rr9.jpg" width="1000" height="1000">
-  </figure>
+      <img class="img" src="rr6.jpg" alt="Image 1">
+      <img class="img" src="rr7.jpg" alt="Image 2">
+      <img class="img" src="rr8.jpg" alt="Image 3">
+      <img class="img" src="rr10.jpg" alt="Image 4">
+      <img class="img" src="rr11.jpg" alt="Image 5">
+      <img class="img" src="rr9.jpg" alt="Image 6">
+      <img class="img" src="rr13.jpg" alt="Image 7">
+      <img class="img" src="rr1.jpg" alt="Image 8">
+      <img class="img" src="rr2.jpg" alt="Image 9">
+      <img class="img" src="rr3.jpg" alt="Image 10">
+      <img class="img" src="rr14.jpg" alt="Image 11">
+      <img class="img" src="rr15.jpg" alt="Image 12">
+      <img class="img" src="rr16.jpg" alt="Image 13">
+      <img class="img" src="rr17.jpg" alt="Image 14">
+      <img class="img" src="rr18.jpg" alt="Image 15">
+      <img class="img" src="rr19.jpg" alt="Image 16">
+      <img class="img" src="rr20.jpg" alt="Image 17">
+      <img class="img" src="rr21.jpg" alt="Image 18">
+      <img class="img" src="rr22.jpg" alt="Image 19">
+      <img class="img" src="rr23.jpg" alt="Image 20">
+      <img class="img" src="rr24.jpg" alt="Image 21">
+      <img class="img" src="rr25.jpg" alt="Image 22">
+    </div>
 
-  <figure>
-    <img class="img" src="13.jpg" width="1000" height="1000">
-</figure>
-      <figure>
-          <img class="img" src="rr1.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-          <img  class="img" src="rr2.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-          <img  class="img" src="rr3.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-        <img  class="img" src="rr14.jpg" width="1000" height="1000">
-    </figure>
-    <figure>
-        <img  class="img" src="rr15.jpg" width="1000" height="1000">
-    </figure>
-    <figure>
-        <img  class="img" src="rr16.jpg" width="1000" height="1000">
-    </figure>
-    <figure>
-        <img  class="img" src="rr17.jpg" width="1000" height="1000">
-    </figure>
-    <figure>
-      <img  class="img" src="rr18.jpg" width="1000" height="1000">
-  </figure>
-  <figure>
-      <img  class="img" src="rr19.jpg" width="1000" height="1000">
-  </figure>
-  <figure>
-    <img  class="img" src="rr20.jpg" width="1000" height="1000">
-</figure>
-<figure>
-    <img  class="img" src="rr21.jpg" width="1000" height="1000">
-</figure>
-<figure>
-    <img  class="img" src="rr22.jpg" width="1000" height="1000">
-</figure>
-<figure>
-  <img  class="img" src="rr23.jpg" width="1000" height="1000">
-</figure>
-<figure>
-  <img  class="img" src="rr24.jpg" width="1000" height="1000">
-</figure>
-  
+    <!-- Popup Section -->
+    <div class="popup" id="popup">
+      <span class="close" id="closeBtn">&times;</span>
+      <img src="" alt="Popup Image" id="popupImg">
+    </div>
 
-<figure>
-    <img  class="img" src="rr25.jpg" width="1000" height="1000">
-  </figure>
- 
-    
-  </div> 
-    <!-- imagessssss-->
-     
 
-  
-    <br>
-    <br>
+  </div>
+  <!-- imagessssss-->
+
+
+
+  <br>
+  <br>
 
   <!-- footer start-->
-          <div class="btmbdr">
-            <center>
-              <div class="copyright">
-                  <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                      &copy; <a class="border-bottom" href="index.html">Hare Krishna</a>, All Right Reserved.
+  <div class="btmbdr">
+    <center>
+      <div class="copyright">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a class="border-bottom" href="index.html">Hare Krishna</a>, All Right Reserved.
 
-                      Designed By <a class="border-bottom" href="https://shivang-website.vercel.app/">Shivang Bijalwan</a>
-                  </div>
-</div></div></center>
-      <!-- Footer End -->
+            Designed By <a class="border-bottom" href="https://shivang-website.vercel.app/">Shivang Bijalwan</a>
+          </div>
+        </div>
+      </div>
+    </center>
+    <!-- Footer End -->
 
+    <script>
+      // JavaScript for popup functionality
+      const galleryImages = document.querySelectorAll('.gallery img');
+      const popup = document.getElementById('popup');
+      const popupImg = document.getElementById('popupImg');
+      const closeBtn = document.getElementById('closeBtn');
 
-  <!-- JavaScript Libraries -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/tempusdominus/js/moment.min.js"></script>
-  <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-  <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+      // Open popup when an image is clicked
+      galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+          popupImg.src = img.src;
+          popup.style.display = 'flex';
+        });
+      });
 
-  <!-- Template Javascript -->
-  <script src="js/main.js"></script>
+      // Close popup when close button is clicked
+      closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+      });
+
+      // Close popup when clicking outside the image
+      popup.addEventListener('click', (e) => {
+        if (e.target !== popupImg) {
+          popup.style.display = 'none';
+        }
+      });
+    </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -55,102 +55,59 @@
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
 
-
   <style>
-    .btmbdr{
-     background-color: #0F172B;
-     height:5vw;
-     text-decoration-color:white;
-
-    }
-  
     body {
-    background: #020520;
-    perspective: 500px;
-    overflow-x: hidden;
-}
+      background: #020520;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-figure {
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+      padding: 10px;
+    }
 
-figure:nth-child(1) .img {
-    transform: scale(0.6) rotate(-12.5deg);
-}
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      cursor: pointer;
+    }
 
-figure:nth-child(2) .img {
-    transform: scale(0.6) rotate(-9.722deg);
-}
+    /* Popup styles */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
 
-figure:nth-child(3) .img {
-    transform: scale(0.6) rotate(-6.944deg);
-}
+    .popup img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
 
-figure:nth-child(4) .img {
-    transform: scale(0.6) rotate(-4.167deg);
-}
-
-figure:nth-child(5) .img {
-    transform: scale(0.6) rotate(-1.389deg);
-}
-
-figure:nth-child(6) .img {
-    transform: scale(0.6) rotate(1.389deg);
-}
-
-figure:nth-child(7) .img {
-    transform: scale(0.6) rotate(4.167deg);
-}
-
-figure:nth-child(8) .img {
-    transform: scale(0.6) rotate(6.944deg);
-}
-
-figure:nth-child(9) .img {
-    transform: scale(0.6) rotate(9.722deg);
-}
-
-figure:nth-child(10) .img {
-    transform: scale(0.6) rotate(12.5deg);
-}
-figure:nth-child(11) .img {
-    transform: scale(0.6) rotate(14.722deg);
-}
-
-figure:nth-child(12) .img {
-    transform: scale(0.6) rotate(18.600deg);
-}
-
-figure:nth-child(13) .img {
-    transform: scale(0.6) rotate(20.944deg);
-}
-
-figure:nth-child(14) .img {
-    transform: scale(0.6) rotate(22.722deg);
-}
-
-figure:nth-child(15) .img {
-    transform: scale(0.6) rotate(25.5deg);
-}
-figure:nth-child(16) .img {
-    transform: scale(0.6) rotate(28.722deg);
-}
-
-figure:nth-child(17) .img {
-    transform: scale(0.6) rotate(32.600deg);
-}
-.img {
-    width: 100vmin;
-    height: 100vmin;
-    border-radius: 3px;
-}
-
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
   </style>
 </head>
 
@@ -196,65 +153,38 @@ figure:nth-child(17) .img {
       </div>
     </div>
     <!-- Navbar & Hero End -->
-
-    <!-- imagessssss-->
     <div class="gallery">
-      <figure>
-          <img class="img" src="pp6.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-          <img class="img" src="pp7.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-          <img  class="img" src="pp8.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-          <img class="img" src="pp10.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-        <img class="img" src="pp11.jpg" width="1000" height="1000">
-    </figure>
-    <figure>
-      <img class="img" src="pp12.jpg" width="1000" height="1000">
-  </figure>
-
-  <figure>
-    <img class="img" src="pp13.jpg" width="1000" height="1000">
-</figure>
-      <figure>
-          <img class="img" src="pp1.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-          <img  class="img" src="pp2.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-          <img  class="img" src="pp3.jpg" width="1000" height="1000">
-      </figure>
-      <figure>
-        <img  class="img" src="pp14.jpg" width="1000" height="1000">
-    </figure>
-    <figure>
-        <img  class="img" src="pp15.jpg" width="1000" height="1000">
-    </figure>
-    <figure>
-        <img  class="img" src="pp16.jpg" width="1000" height="1000">
-    </figure>
-    <figure>
-        <img  class="img" src="pp17.jpg" width="1000" height="1000">
-    </figure>
-    <figure>
-      <img  class="img" src="pp18.jpg" width="1000" height="1000">
-  </figure>
-  <figure>
-      <img  class="img" src="pp19.jpg" width="1000" height="1000">
-  </figure>
-  
-
-  </div> 
+      <img class="img" src="pp6.jpg" alt="Image 1">
+      <img class="img" src="pp7.jpg" alt="Image 2">
+      <img class="img" src="pp8.jpg" alt="Image 3">
+      <img class="img" src="pp10.jpg" alt="Image 4">
+      <img class="img" src="pp11.jpg" alt="Image 5">
+      <img class="img" src="pp9.jpg" alt="Image 6">
+      <img class="img" src="pp13.jpg" alt="Image 7">
+      <img class="img" src="pp1.jpg" alt="Image 8">
+      <img class="img" src="pp2.jpg" alt="Image 9">
+      <img class="img" src="pp3.jpg" alt="Image 10">
+      <img class="img" src="pp14.jpg" alt="Image 11">
+      <img class="img" src="pp15.jpg" alt="Image 12">
+      <img class="img" src="pp16.jpg" alt="Image 13">
+      <img class="img" src="pp17.jpg" alt="Image 14">
+      <img class="img" src="pp18.jpg" alt="Image 15">
+      <img class="img" src="pp19.jpg" alt="Image 16">
+      <img class="img" src="pp20.jpg" alt="Image 17">
+      <img class="img" src="pp21.jpg" alt="Image 18">
+      <img class="img" src="pp27.jpg" alt="Image 19">
+      <img class="img" src="pp23.jpg" alt="Image 20">
+      <img class="img" src="pp24.jpg" alt="Image 21">
+      <img class="img" src="pp25.jpg" alt="Image 22">
+    </div>
+    
     <!-- imagessssss-->
-     
-
-  
+    
+  <!-- Popup Section -->
+  <div class="popup" id="popup">
+    <span class="close" id="closeBtn">&times;</span>
+    <img src="" alt="Popup Image" id="popupImg">
+  </div>
     <br>
     <br>
 
@@ -270,7 +200,33 @@ figure:nth-child(17) .img {
                   </div>
 </div></div></center>
       <!-- Footer End -->
-
+      <script>
+        // JavaScript for popup functionality
+        const galleryImages = document.querySelectorAll('.gallery img');
+        const popup = document.getElementById('popup');
+        const popupImg = document.getElementById('popupImg');
+        const closeBtn = document.getElementById('closeBtn');
+  
+        // Open popup when an image is clicked
+        galleryImages.forEach(img => {
+          img.addEventListener('click', () => {
+            popupImg.src = img.src;
+            popup.style.display = 'flex';
+          });
+        });
+  
+        // Close popup when close button is clicked
+        closeBtn.addEventListener('click', () => {
+          popup.style.display = 'none';
+        });
+  
+        // Close popup when clicking outside the image
+        popup.addEventListener('click', (e) => {
+          if (e.target !== popupImg) {
+            popup.style.display = 'none';
+          }
+        });
+      </script>
 
   <!-- JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
